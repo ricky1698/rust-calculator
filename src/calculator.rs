@@ -3,6 +3,12 @@ use crate::operations::Operation;
 /// A simple calculator that can perform operations on two floating-point numbers.
 pub struct Calculator;
 
+impl Default for Calculator {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl Calculator {
     pub fn new() -> Self {
         Calculator
