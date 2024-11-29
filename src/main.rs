@@ -9,12 +9,13 @@ use std::io::{self, Write};
 fn main() {
     let calc = Calculator::new();
 
-    println!("Advanced Calculator v{}", env!("CARGO_PKG_VERSION"));
+        println!("Advanced Calculator v{}", env!("CARGO_PKG_VERSION"));
     println!("Select operation:\n1. Add\n2. Subtract\n3. Multiply\n4. Divide\n5. Power");
 
     print!("Enter choice (1-5): ");
     io::stdout().flush().unwrap();
-    let choice: u32 = match io::stdin().lines().next().unwrap().unwrap().parse() {
+    let choice: u32 = match io::stdin().lines().next().unwrap().unwrap().parse() 
+    {
         Ok(num) if (1..=5).contains(&num) => num,
         _ => {
             println!("Invalid choice. Please enter a number between 1 and 5.");
