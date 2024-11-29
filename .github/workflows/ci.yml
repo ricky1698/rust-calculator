@@ -29,8 +29,10 @@ jobs:
       - name: Install dependencies
         run: cargo fetch
 
+      - name: Run format check
+        run: cargo fmt -- --check
+
       - name: Run Tests
         run: cargo test
-
 
             
