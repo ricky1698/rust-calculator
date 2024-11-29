@@ -1,0 +1,38 @@
+{
+    "name": "Rust and C++ Development Container",
+    "image": "mcr.microsoft.com/devcontainers/base:ubuntu-22.04",
+    "features": {
+        "ghcr.io/meaningful-ooo/devcontainer-features/homebrew:2": {},
+        "ghcr.io/devcontainers/features/docker-in-docker:2": {
+            "moby": true,
+            "azureDnsAutoDetection": true,
+            "installDockerBuildx": true,
+            "installDockerComposeSwitch": true,
+            "version": "latest",
+            "dockerDashComposeVersion": "latest"
+        },
+        "ghcr.io/devcontainers/features/rust:1": {}
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-vscode.cpptools-extension-pack",
+                "fill-labs.dependi",
+                "panicbit.cargo",
+                "vadimcn.vscode-lldb",
+                "tamasfe.even-better-toml",
+                "JScearcy.rust-doc-viewer",
+                "rust-lang.rust-analyzer",
+                "hdevalke.rust-test-lens",
+                "mhutchie.git-graph"
+            ]
+        }
+    },
+    "onCreateCommand": "bash .devcontainer/setup.sh",
+    "runArgs": [
+        "--cap-add=SYS_PTRACE",
+        "--security-opt",
+        "seccomp=unconfined"
+    ],
+    "remoteUser": "vscode"
+}

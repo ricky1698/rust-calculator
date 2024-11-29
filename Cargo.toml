@@ -1,0 +1,12 @@
+[package]
+name = "calculator_rs"
+version = "0.1.0"
+edition = "2021"
+
+[[test]]
+name = "e2e_tests"
+harness = false
+
+[dev-dependencies]
+cucumber = { version = "0.21.1", features = ["macros"] }
+tokio = { version = "1.28", features = ["full", "macros", "rt-multi-thread"] }
