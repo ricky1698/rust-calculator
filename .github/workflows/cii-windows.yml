@@ -50,6 +50,7 @@ jobs:
   
   coverage-report:
     runs-on: ubuntu-latest
+    needs: test
     permissions:
       contents: read
       issues: read
