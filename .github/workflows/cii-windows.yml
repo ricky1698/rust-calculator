@@ -66,6 +66,13 @@ jobs:
           name: windows-code-coverage-report
           path: .
 
+      - name: Run sed
+        run: |
+          sed -i '' \
+            -e '/^SF:/s|D:\\a|/home/runner/work|g' \
+            -e '/^SF:/s|\\|/|g' \
+            lcov.info
+
       - name: Setup LCOV
         uses: hrishikesh-kadam/setup-lcov@v1
 
