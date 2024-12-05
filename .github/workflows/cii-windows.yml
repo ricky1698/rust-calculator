@@ -35,7 +35,7 @@ jobs:
           cargo llvm-cov report --lcov --output-path lcov.info
 
       - name: Test Results Comment
-        uses: EnricoMi/publish-unit-test-result-action/linux@v2
+        uses: EnricoMi/publish-unit-test-result-action/windows@v2
         id: windows-test-results
         if: always()
         with:
