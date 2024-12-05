@@ -50,7 +50,7 @@ jobs:
         uses: zgosalvez/github-actions-report-lcov@v3
         with:
           title-prefix: Woindows-
-          coverage-files: lcov.*.info
+          coverage-files: lcov.info
           artifact-name: windows-code-coverage-report
           github-token: ${{ secrets.GITHUB_TOKEN }}
           update-comment: true
