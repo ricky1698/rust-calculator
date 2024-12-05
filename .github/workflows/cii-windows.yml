@@ -11,6 +11,11 @@ on:
 jobs:
   test:
     runs-on: windows-2022
+    permissions:
+      contents: read
+      issues: read
+      checks: write
+      pull-requests: write
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
