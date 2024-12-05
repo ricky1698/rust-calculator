@@ -1,0 +1,6 @@
+[profile.ci]
+fail-fast = false
+# default-filter = 'not test()'
+
+[profile.ci.junit]
+path = "junit.xml"
