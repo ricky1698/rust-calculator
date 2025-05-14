@@ -2,6 +2,8 @@
 
 A simple calculator implementation in Rust that demonstrates clean architecture, modular design, and comprehensive testing strategies.
 
+This project includes basic arithmetic operations, advanced operations like exponentiation, and a robust testing suite using unit tests, integration tests, and end-to-end tests with Cucumber.
+
 ## Project Structure
 
 ```
