@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.4.0](https://github.com/ricky1698/rust-calculator/compare/v0.3.0...v0.4.0) (2025-05-14)
+
+
+### Features
+
+* Add advanded feature ([#9](https://github.com/ricky1698/rust-calculator/issues/9)) ([670cf3b](https://github.com/ricky1698/rust-calculator/commit/670cf3b350f4c8664995fab033b4181a66409d14))
+* awesome name ([33b5fa1](https://github.com/ricky1698/rust-calculator/commit/33b5fa158cf7c7923b33ea4b9d09fc606e8976ff))
+
+
+### Bug Fixes
+
+* typo ([12fab7f](https://github.com/ricky1698/rust-calculator/commit/12fab7f190625072d8893b8740d813939d193eb5))
+
 ## [0.3.0](https://github.com/ricky1698/rust-calculator/compare/v0.2.1...v0.3.0) (2025-05-14)
 
 
