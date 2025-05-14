@@ -1,0 +1,11 @@
+{
+  "packages": {
+    ".": {
+      "release-type": "rust",
+      "package-name": "calculator_rs",
+      "component": "gorilla-inference-service",
+      "include-component-in-tag": true,
+      "changelog-path": "CHANGELOG.md"
+    }
+  }
+}
