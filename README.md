@@ -1,4 +1,4 @@
-# rust-calculator
+# rust calculator
 
 A simple calculator implementation in Rust that demonstrates clean architecture, modular design, and comprehensive testing strategies.
 
