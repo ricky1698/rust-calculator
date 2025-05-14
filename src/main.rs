@@ -13,6 +13,8 @@ fn main() {
     println!("Select operation:\n1. Add\n2. Subtract\n3. Multiply\n4. Divide\n5. Power");
 
     print!("Enter choice (1-5): ");
+    print!("1. Add\n2. Subtract\n3. Multiply\n4. Divide\n5. Power\n");
+    print!("> ");
     io::stdout().flush().unwrap();
     let choice: u32 = match io::stdin().lines().next().unwrap().unwrap().parse() {
         Ok(num) if (1..=5).contains(&num) => num,
