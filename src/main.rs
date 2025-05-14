@@ -9,7 +9,7 @@ use std::io::{self, Write};
 fn main() {
     let calc = Calculator::new();
 
-    println!("Advanced Calculator v{}", env!("CARGO_PKG_VERSION"));
+    println!("Awesome Calculator v{}", env!("CARGO_PKG_VERSION"));
     println!("Select operation:\n1. Add\n2. Subtract\n3. Multiply\n4. Divide\n5. Power");
 
     print!("Enter choice (1-5): ");
