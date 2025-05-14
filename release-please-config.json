@@ -4,7 +4,7 @@
       "release-type": "rust",
       "package-name": "calculator_rs",
       "component": "calculator_rs",
-      "include-component-in-tag": true,
+      "include-component-in-tag": false,
       "changelog-path": "CHANGELOG.md"
     }
   }
