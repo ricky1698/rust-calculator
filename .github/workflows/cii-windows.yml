@@ -11,6 +11,11 @@ on:
 jobs:
   test:
     runs-on: windows-2022
+    permissions:
+      contents: read
+      issues: read
+      checks: write
+      pull-requests: write
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -30,13 +35,45 @@ jobs:
           cargo llvm-cov report --lcov --output-path lcov.info
 
       - name: Test Results Comment
-        uses: EnricoMi/publish-unit-test-result-action/linux@v2
+        uses: EnricoMi/publish-unit-test-result-action/windows@v2
         id: windows-test-results
         if: always()
         with:
           check_name: Windows Test Results
           files: |
             target/nextest/ci/junit.xml
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: lcov-raw
+          path: lcov.info
+  
+  coverage-report:
+    runs-on: ubuntu-latest
+    needs: test
+    permissions:
+      contents: read
+      issues: read
+      checks: write
+      pull-requests: write
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Download artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: lcov-raw
+          path: .
+
+      - name: Run sed to workaroud Windows paths
+        run: |
+          pwd
+          ls
+          sed -i \
+            -e '/^SF:/s|D:\\a|/home/runner/work|g' \
+            -e '/^SF:/s|\\|/|g' \
+            ./lcov.info
 
       - name: Setup LCOV
         uses: hrishikesh-kadam/setup-lcov@v1
@@ -45,7 +82,7 @@ jobs:
         uses: zgosalvez/github-actions-report-lcov@v3
         with:
           title-prefix: Woindows-
-          coverage-files: target/lcov.*.info
+          coverage-files: lcov.info
           artifact-name: windows-code-coverage-report
           github-token: ${{ secrets.GITHUB_TOKEN }}
           update-comment: true
